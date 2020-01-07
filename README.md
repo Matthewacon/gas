@@ -1,2 +1,2 @@
 # gas
-Go runtime assertion library
+A simple Go runtime assertion library.
