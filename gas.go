@@ -22,9 +22,13 @@ type Assertion func (interface{}, ...interface{}) ()
 var arbitraryAssertions map[reflect.Type]Assertion
 var kindAssertions map[reflect.Kind]Assertion
 
-func AssertNonNil(i interface{}) {
+func AssertNonNil(i interface{}, formatString ...interface{}) {
 	if i == nil {
-		panic(fmt.Errorf("Nil assertion failed!\n"))
+		if len(formatString) > 0 {
+			panic(fmt.Errorf(format(formatString...)))
+		} else {
+			panic(fmt.Errorf("Nil assertion failed!\n"))
+		}
 	}
 }
 
