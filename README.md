@@ -43,7 +43,7 @@ package main
 import "reflect"
 
 func AssertType(k reflect.Kind, i interface{}, format ...interface{})
-func AssertKing(t reflect.Type, i interface{}, format ...interface{})
+func AssertKind(t reflect.Type, i interface{}, format ...interface{})
 ```
 
 ### Assertion clusters
